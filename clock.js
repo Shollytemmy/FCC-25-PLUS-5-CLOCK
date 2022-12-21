@@ -21,6 +21,29 @@ let sessionLength = 25 * 60
     const resetbtn = document.getElementById('reset-btn')
 
 
+    //Playbtn
+
+    const updateTimer = (length) =>{
+         timerMinute.textContent = Math.floor(length / 60)
+                timerSeconds.textContent = Math.floor(length % 60)
+
+
+    }
+
+    playbtn.addEventListener('click', () =>{
+        if(isSessionMode){
+            setInterval(() =>{
+                sessionLength -= 1;
+                updateTimer(sessionLength)
+                
+               
+
+            }, 1000)
+        }
+
+
+    })
+
     breakMinusElement.addEventListener('click', () =>{
 
         breakLength -= 60;
