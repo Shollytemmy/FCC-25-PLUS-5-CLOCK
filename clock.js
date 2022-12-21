@@ -14,6 +14,12 @@ let sessionLength = 25 * 60
     const timerMinute = document.getElementById('timer-minute')
     const timerSeconds = document.getElementById('timer-seconds')
 
+    // Butons
+
+    const playbtn = document.getElementById('play-btn')
+    const pausebtn = document.getElementById('pause-btn')
+    const resetbtn = document.getElementById('reset-btn')
+
 
     breakMinusElement.addEventListener('click', () =>{
 
