@@ -36,8 +36,17 @@ const FIVE_MINUTE = 5* 60
 
     // resetfunction
     function resetTimer(){
+        isSessionMode = true
         breakLength = FIVE_MINUTE;
         sessionLength = TWENTYFIVE_MINUTE;
+
+        breakElement.textContent = FIVE_MINUTE / 60;
+        sessionElement.textContent =TWENTYFIVE_MINUTE / 60
+
+        clearInterval(timerId)
+
+        timerMinute.textContent = TWENTYFIVE_MINUTE / 60
+        timerSeconds.textContent = "00"
     }
 
     playbtn.addEventListener('click', () =>{
