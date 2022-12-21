@@ -4,6 +4,9 @@ let breakLength = 5 * 60;
 let sessionLength = 25 * 60
 let timerId;
 
+const TWENTYFIVE_MINUTE = 25 * 60;
+const FIVE_MINUTE = 5* 60
+
 
 
     const breakMinusElement = document.getElementById('break-minus-element')
@@ -31,6 +34,12 @@ let timerId;
 
     }
 
+    // resetfunction
+    function resetTimer(){
+        breakLength = FIVE_MINUTE;
+        sessionLength = TWENTYFIVE_MINUTE;
+    }
+
     playbtn.addEventListener('click', () =>{
         if(isSessionMode){
           timerId = setInterval(() =>{
@@ -53,6 +62,12 @@ let timerId;
             clearInterval(timerId)
         }
 
+    })
+
+    // resetbtn
+
+    resetbtn.addEventListener('click', ()=> {
+        resetTimer()
     })
 
     breakMinusElement.addEventListener('click', () =>{
@@ -93,3 +108,6 @@ let timerId;
 
        
     })
+
+
+    
