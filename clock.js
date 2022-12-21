@@ -2,6 +2,7 @@
 isSessionMode = true;
 let breakLength = 5 * 60;
 let sessionLength = 25 * 60
+let timerId;
 
 
 
@@ -32,8 +33,8 @@ let sessionLength = 25 * 60
 
     playbtn.addEventListener('click', () =>{
         if(isSessionMode){
-            setInterval(() =>{
-                sessionLength -= 1;
+          timerId = setInterval(() =>{
+               sessionLength -= 1;
                 updateTimer(sessionLength)
                 
                
@@ -41,6 +42,16 @@ let sessionLength = 25 * 60
             }, 1000)
         }
 
+
+    })
+
+    // pausebtn
+
+    pausebtn.addEventListener('click', () => {
+
+        if(isSessionMode){
+            clearInterval(timerId)
+        }
 
     })
 
