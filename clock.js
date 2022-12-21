@@ -23,3 +23,15 @@ let sessionLength = 25 * 60
 
         breakElement.textContent = breakLength / 60
     })
+
+    sessionMinusElement.addEventListener('click', () => {
+        sessionLength -= 60;
+
+        sessionElement.textContent = sessionLength / 60
+    })
+
+
+    sessionPlusElement.addEventListener('click', () => {
+        sessionLength += 60;
+        sessionElement.textContent = sessionLength / 60
+    })
